@@ -1,0 +1,373 @@
+/* =====================
+   Reset & Base
+   ===================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:       #F9F8F6;
+  --bg-alt:   #F0EFE9;
+  --text:     #111110;
+  --muted:    #88877F;
+  --subtle:   #555552;
+  --border:   #E4E2DB;
+  --font:     'Inter', system-ui, -apple-system, sans-serif;
+  --max-w:    720px;
+  --radius:   8px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =====================
+   Layout
+   ===================== */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =====================
+   Nav
+   ===================== */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(249, 248, 246, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+/* =====================
+   Hero
+   ===================== */
+.hero {
+  padding: 96px 0 80px;
+  animation: fadeUp 0.5s ease both;
+}
+
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.hero-heading {
+  font-size: clamp(26px, 4.5vw, 40px);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.hero-sub {
+  font-size: 17px;
+  color: var(--subtle);
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-photo {
+  flex-shrink: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =====================
+   Sections
+   ===================== */
+.section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-alt {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+
+/* =====================
+   About & Now
+   ===================== */
+.body-text {
+  font-size: 17px;
+  color: var(--subtle);
+  line-height: 1.78;
+  margin-bottom: 20px;
+}
+
+.body-text:last-of-type {
+  margin-bottom: 0;
+}
+
+.now-meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+/* =====================
+   Work Cards
+   ===================== */
+.work-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.work-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  transition: border-color 0.2s ease;
+}
+
+.work-card:hover {
+  border-color: #C8C5BC;
+}
+
+.work-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.work-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.work-years {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.work-title {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.work-desc {
+  font-size: 15px;
+  color: var(--subtle);
+  line-height: 1.72;
+  margin-bottom: 20px;
+}
+
+.work-outcome {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--subtle);
+}
+
+.outcome-label {
+  font-weight: 600;
+  color: var(--muted);
+  flex-shrink: 0;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* =====================
+   Contact
+   ===================== */
+.contact-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.contact-link {
+  display: inline-block;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.contact-link:hover {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
+}
+
+/* =====================
+   Footer
+   ===================== */
+.footer {
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* =====================
+   Animation
+   ===================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   Mobile
+   ===================== */
+@media (max-width: 600px) {
+  .hero {
+    padding: 64px 0 56px;
+  }
+
+  .hero-inner {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .hero-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+  }
+
+  .body-text {
+    font-size: 16px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .work-card {
+    padding: 22px 20px;
+  }
+
+  .work-card-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .contact-links {
+    flex-direction: column;
+  }
+
+  .contact-link {
+    text-align: center;
+  }
+}
